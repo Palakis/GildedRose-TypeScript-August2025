@@ -1,4 +1,5 @@
-import { Item, GildedRose } from "@/gilded-rose";
+import { GildedRose } from "@/gilded-rose";
+import { Item } from "@/items";
 
 describe("Gilded Rose - Backstage Passes specifics", () => {
   it("should make Backstage Passes increase in Quality by 1 when SellIn > 10", () => {

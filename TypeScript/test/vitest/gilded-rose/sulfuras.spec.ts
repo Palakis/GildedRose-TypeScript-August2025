@@ -1,4 +1,5 @@
-import { Item, GildedRose } from "@/gilded-rose";
+import { GildedRose } from "@/gilded-rose";
+import { Item } from "@/items";
 
 describe("Gilded Rose - Sulfuras specifics", () => {
   it("should never make Sulfuras age or decrease in Quality", () => {

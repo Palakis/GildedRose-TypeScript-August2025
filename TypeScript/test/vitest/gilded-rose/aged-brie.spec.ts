@@ -1,4 +1,5 @@
-import { Item, GildedRose } from "@/gilded-rose";
+import { GildedRose } from "@/gilded-rose";
+import { Item } from "@/items";
 
 describe("Gilded Rose - Aged Brie specifics", () => {
   it("should make Aged Brie increase in Quality the older it gets", () => {
