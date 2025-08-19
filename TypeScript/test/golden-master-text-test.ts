@@ -4,6 +4,7 @@ import {
   AgedItem,
   LegendaryItem,
   VipTicketItem,
+  ConjuredItem,
 } from "../app/items";
 
 console.log("OMGHAI!");
@@ -17,8 +18,7 @@ const items = [
   new VipTicketItem("Backstage passes to a TAFKAL80ETC concert", 15, 20),
   new VipTicketItem("Backstage passes to a TAFKAL80ETC concert", 10, 49),
   new VipTicketItem("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-  // this conjured item does not work properly yet
-  new StandardItem("Conjured Mana Cake", 3, 6),
+  new ConjuredItem("Conjured Mana Cake", 3, 6),
 ];
 
 const gildedRose = new GildedRose(items);
