@@ -35,5 +35,5 @@ for (let i = 0; i < days + 1; i++) {
     console.log(element.name + ", " + element.sellIn + ", " + element.quality);
   });
   console.log();
-  gildedRose.updateQuality();
+  gildedRose.updateItems();
 }
