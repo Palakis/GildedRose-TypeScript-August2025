@@ -2,11 +2,11 @@
 
 ## First things first
 
+In addition to the [thoroughly-written requirements](../GildedRoseRequirements.md), I treated the source code itself as another piece of "specification" to cover for edge-cases missed by the requirements.
+
 Among the three test suite examples included, I picked Vitest for its speed and closeness to Jest.
 
 The first step before doing any else was to write unit tests to cover existing behaviour and make sure the app keeps its existing behaviour during refactoring. Alongside unit tests, I chose the keep the existing TextTest approval test to complement the "source of truth" provided by my unit tests.
-
-In addition to the [thoroughly-written requirements](../GildedRoseRequirements.md), I treated the source code itself as another piece of "specification".
 
 ## The Refactor
 
@@ -31,22 +31,14 @@ This approach makes it easy to add a `ConjuredItem` subclass that implements the
 
 ## The Goblin
 
-If you've read the requirements, you may have noticed a paragraph saying that the `Item` class and the `GuildedRose::items` attribute should not be modified unless one wants to face consequences from a territorial Goblin.
+You may have noticed the requirements have a paragraph saying that the `Item` class and the `GuildedRose::items` attribute should not be modified unless one wants to face consequences from a territorial Goblin.
 
 Software Engineering is teamwork. As engineers, we have to make our work easier for our teammates, ourselves, and our future selves. We have to understand that the code we write is not ours-only, and that its ownership is shared with our teammates.
 
 Furthermore, we should not hesitate to rework pieces of code that feel incorrect, hard to understand or make it harder to implement new features. We should do so kindly so that the author of the original code can learn and improve (even seniors!), and also accept feedback on works of our own.
 
-I have indeed modified the `Item` class against the recommendation of the requirements document, because the Goblin works in a team.
+I have indeed modified the `Item` class against the recommendation of the requirements document, because the Goblin will have to adapt to teamwork.
 
-## Idempotency
+## Further improvement
 
-One area of improvement for the app is making sure things do go sideways if `update` is called more than once on the same day.
-
-A few options:
-
-- The simple one:
-  - On each item, store the timestamp of the last update and use it to prevent updates less than 24 hours after the last call
-  - Drawback : if `update` is not fired for some reason, a day of updates will not be accounted for
-- The correct one:
-  - On each item, store `addedOn` and `sellBy` timestamps and compute `quality` from these values.
+One area of improvement for the app is making the `update` functions idempotent, otherwise things will go sideways if `update` is called more than once per day. One solution to address this is to add `addedOn` and `sellBy` timestamps on the `Item` class and compute `quality` from these values.
