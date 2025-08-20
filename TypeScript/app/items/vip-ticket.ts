@@ -2,21 +2,21 @@ import { BaseItem } from "./base";
 
 export class VipTicketItem extends BaseItem {
   public update(): void {
-    if (this._sellIn > 0) {
-      this._quality = Math.min(50, this._quality + this.getQualityIncrease());
+    if (this.sellIn > 0) {
+      this.quality += this.getQualityIncrease();
     } else {
-      this._quality = 0;
+      this.quality = 0;
     }
 
-    this._sellIn--;
+    this.sellIn--;
   }
 
   protected getQualityIncrease(): number {
-    if (this._sellIn <= 5) {
+    if (this.sellIn <= 5) {
       return 3;
     }
 
-    if (this._sellIn <= 10) {
+    if (this.sellIn <= 10) {
       return 2;
     }
 
