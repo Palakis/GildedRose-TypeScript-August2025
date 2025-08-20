@@ -41,4 +41,6 @@ I have indeed modified the `Item` class against the recommendation of the requir
 
 ## Further improvement
 
-One area of improvement for the app is making the `update` functions idempotent, otherwise things will go sideways if `update` is called more than once per day. One solution to address this is to add `addedOn` and `sellBy` timestamps on the `Item` class and compute `quality` from these values.
+One area of improvement for the app, although outside the scope of the requirements, is making the `update` functions idempotent, otherwise things will go sideways if `update` is called more than once per day. One solution to address this is to add `addedOn` and `sellBy` timestamps on the `Item` class and compute `quality` from these values.
+
+Another solution would be to store the timestamp of the last update and prevent updates triggered less than 24 hours between now and the last update (drawback : missed days are not handled, or should be compensated manually by running as many calls as days were missed).
