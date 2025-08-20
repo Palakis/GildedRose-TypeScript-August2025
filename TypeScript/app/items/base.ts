@@ -1,4 +1,4 @@
-import { ItemInterface } from "@/types/item";
+import { ItemInterface } from '@/types/item';
 
 export abstract class BaseItem implements ItemInterface {
   constructor(

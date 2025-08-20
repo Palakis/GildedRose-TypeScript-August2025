@@ -1,4 +1,4 @@
-import { BaseItem } from "./base";
+import { BaseItem } from './base';
 
 export class LegendaryItem extends BaseItem {
   public update(): void {
