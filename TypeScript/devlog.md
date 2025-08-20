@@ -4,7 +4,7 @@
 
 In addition to the [thoroughly-written requirements](../GildedRoseRequirements.md), I treated the source code itself as another piece of "specification" to cover for edge-cases missed by the requirements.
 
-Among the three test suite examples included, I picked Vitest for its speed and closeness to Jest.
+Among the three test suite examples included, I picked Vitest for its speed and closeness to Jest. As a added bonus, I added a Prettier config for consistent code formatting.
 
 The first step before doing any else was to write unit tests to cover existing behaviour and make sure the app keeps its existing behaviour during refactoring. Alongside unit tests, I chose the keep the existing TextTest approval test to complement the "source of truth" provided by my unit tests.
 
